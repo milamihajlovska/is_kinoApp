@@ -1,0 +1,80 @@
+﻿@model is_kino.Domain.DTO.ShoppingCartDto
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+
+    <h1>Shopping Cart</h1>
+
+    <div>
+        <a asp-controller="ShoppingCart" asp-action="Order" class="btn btn-info">Order now</a>
+    </div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+            </th>
+            <th>
+                TicketId
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Ticket Price
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i=0; i < Model.Tickets.Count; i++)
+        {
+            var item = Model.Tickets[i];
+
+            <tr>
+                <td>
+                  @(i+1)
+                </td>
+                <td>
+                    @item.Ticket.Id
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    @item.Ticket.Price
+                </td>
+           <td>
+                    <a asp-controller="ShoppingCart" asp-action="DeleteFromShoppingCart" asp-route-id="@item.Ticket.Id">Delete</a>
+
+           </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>
+                Total Price:
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+            <th>@Model.TotalPrice</th>
+           
+        </tr>
+    </tfoot>
+</table>
+</div>

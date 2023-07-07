@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	 <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-is_kino-815950d2-644a-4b2a-bd79-f2438c5a4eac</UserSecretsId>
+   
+	
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="is_kino.Domain\obj\**" />
+    <Content Remove="is_kino.Domain\obj\**" />
+    <EmbeddedResource Remove="is_kino.Domain\obj\**" />
+    <None Remove="is_kino.Domain\obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="is_kino.Domain\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\is_kino.Domain\is_kino.Domain.csproj" />
+    <ProjectReference Include="..\is_kino.Repository\is_kino.Repository.csproj" />
+    <ProjectReference Include="..\is_kino.Service\is_kino.Service.csproj" />
+  </ItemGroup>
+
+</Project>
